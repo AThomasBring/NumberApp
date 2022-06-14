@@ -11,7 +11,6 @@ namespace NumberApp
     public class Context : DbContext
     {
         public DbSet<NumberList> NumberList { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(@"Data Source=(local)\SQLExpress;Initial Catalog=NumbersLists;Integrated Security=SSPI;");
@@ -23,9 +22,6 @@ namespace NumberApp
         public string NumList { get; set; }
         public int MilliSecondsTaken { get; set; }
         public string SortDirection { get; set; }
-
-
-
         
     }
 }

@@ -78,8 +78,6 @@ void OrderTheList()
     Menu();
 }
 
-
-
 void Menu()
 {
     Console.WriteLine();
@@ -103,22 +101,17 @@ void Menu()
     }
 }
 
-
-
-
-
 void ConvertToJson()
 {
     var context = new Context();
     var listOfLists = context.NumberList.ToList();
-    var jsonList = new List<string>();
     foreach (var listItem in listOfLists)
     {
         string jsonItem = JsonConvert.SerializeObject(listItem, Formatting.Indented);
-        jsonList.Add(jsonItem);
+        Console.WriteLine();
+        Console.WriteLine(jsonItem);
     }
     Console.WriteLine();
-    Console.WriteLine(jsonList);
     Menu();
 }
 
@@ -138,6 +131,3 @@ void SaveToDatabase(List<int> list, int timeToSort, string direction)
     context.NumberList.Add(numList);
     context.SaveChanges();
 }
-
-
-
